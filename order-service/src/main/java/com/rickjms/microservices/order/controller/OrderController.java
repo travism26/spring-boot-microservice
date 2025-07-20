@@ -11,7 +11,9 @@ import com.rickjms.microservices.order.dto.OrderRequest;
 import com.rickjms.microservices.order.service.OrderService;
 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
 @RequiredArgsConstructor
 @RestController
 @RequestMapping("/api/order")
@@ -22,6 +24,7 @@ public class OrderController {
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public String placeOrder(@RequestBody OrderRequest orderRequest) {
+        log.info("Placing Order {}", orderRequest);
         orderService.placeOrder(orderRequest);
         return "Order placed successfully";
     }

@@ -10,7 +10,7 @@ services:
   #     - SPRING_DATASOURCE_PASSWORD=postgres
   mongodb:
     image: mongo:7.0.5
-    container_name: mongodb
+    container_name: mongodb-product-service
     environment:
       - MONGO_INITDB_ROOT_USERNAME=root
       - MONGO_INITDB_ROOT_PASSWORD=password
@@ -18,4 +18,4 @@ services:
     ports:
       - 27017:27017
     volumes:
-      - ./data:/data/db
+      - ./docker-data/data:/data/db
