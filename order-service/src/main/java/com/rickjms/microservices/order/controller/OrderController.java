@@ -26,6 +26,6 @@ public class OrderController {
     public String placeOrder(@RequestBody OrderRequest orderRequest) {
         log.info("Placing Order {}", orderRequest);
         orderService.placeOrder(orderRequest);
-        return "Order placed successfully";
+        return "Order Placed Successfully";
     }
 }
